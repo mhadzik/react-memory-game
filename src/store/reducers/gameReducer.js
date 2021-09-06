@@ -24,7 +24,6 @@ const resetGame = (state, action) => {
     time: 0,
     attempts: 0,
     score: 0,
-    difficulty: 1,
   };
 };
 
