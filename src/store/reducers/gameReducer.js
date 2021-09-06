@@ -13,6 +13,7 @@ const setUsername = (state, action) => {
   return { ...state, username: action.username };
 };
 
+
 const setDifficulty = (state, action) => {
   return { ...state, difficulty: action.difficulty };
 };
@@ -20,9 +21,9 @@ const setDifficulty = (state, action) => {
 const resetGame = (state, action) => {
   return {
     ...state,
-    username: "",
     time: 0,
     attempts: 0,
+    gameStatus: 0,
     score: 0,
   };
 };

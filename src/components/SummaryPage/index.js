@@ -7,7 +7,10 @@ const SummaryPage = ({ username }) => {
   const history = useHistory();
 
   useEffect(() => {
-    if (!username) history.push("/");
+    if (!username) {
+
+      history.push("/");
+    }
   }, []);
 
   return (
