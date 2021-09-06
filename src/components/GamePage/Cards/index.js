@@ -13,6 +13,7 @@ const Cards = ({
   username,
   calcScore,
   setGameStatus,
+  gameStatus,
 }) => {
   const history = useHistory();
 
@@ -24,7 +25,7 @@ const Cards = ({
   const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
-    if (!username) history.push("/");
+    if (!username || gameStatus === 2) history.push("/");
     switch (difficulty) {
       case 1:
         return setCardsNumber(12);
@@ -130,6 +131,7 @@ const mapStateToProps = (state) => {
     difficulty: state.game.difficulty,
     attempts: state.game.attempts,
     username: state.game.username,
+    gameStatus: state.game.gameStatus,
   };
 };
 

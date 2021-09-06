@@ -5,10 +5,14 @@ import * as actions from "../../store/actions";
 import Cards from "./Cards";
 import "./GamePage.scss";
 
-const GamePage = ({ attempts, setGameStatus }) => {
+const GamePage = ({ attempts, setGameStatus, resetGame }) => {
   const [startTimer, setStartTimer] = useState(false);
   const reference = useRef();
-  
+
+  useEffect(() => {
+    return resetGame();
+  }, []);
+
   useEffect(() => {
     reference.current.addEventListener("mousedown", () => {
       setStartTimer(true);
@@ -40,6 +44,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
   return {
     setGameStatus: (status) => dispatch(actions.setGameStatus(status)),
+    resetGame: () => dispatch(actions.resetGame()),
   };
 };
 
