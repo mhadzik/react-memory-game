@@ -38,9 +38,10 @@ const setTime = (state, action) => {
 
 const calcScore = (state, action) => {
   let scoreResult = 0;
-  if (300 - (state.attempts + state.time) <= 0) scoreResult = 0;
+  if (100 * state.difficulty - (state.attempts + state.time) <= 0)
+    scoreResult = 0;
   else {
-    scoreResult = 300 - (state.attempts + state.time);
+    scoreResult = 100 * state.difficulty - (state.attempts + state.time);
   }
   return {
     ...state,
