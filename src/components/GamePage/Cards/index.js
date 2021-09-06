@@ -27,7 +27,7 @@ const Cards = ({
     if (!username) history.push("/");
     switch (difficulty) {
       case 1:
-        return setCardsNumber(4);
+        return setCardsNumber(12);
       case 2:
         return setCardsNumber(20);
       case 3:
