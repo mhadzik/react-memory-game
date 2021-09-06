@@ -45,7 +45,7 @@ const LandingPage = ({ setUsername, setDifficulty }) => {
   };
 
   const isNameValid = () => {
-    return (name.length >= NICK_MIN_LENGTH) && (name.length <= NICK_MAX_LENGTH);
+    return name.length >= NICK_MIN_LENGTH && name.length <= NICK_MAX_LENGTH;
   };
 
   const handleFormSubmit = (event) => {
@@ -64,6 +64,9 @@ const LandingPage = ({ setUsername, setDifficulty }) => {
           placeholder="Enter your name"
           value={name}
           onChange={handleNameChange}
+          required
+          pattern="\S+"
+          title="This field is required. No whitespaces allowed."
         />
         {error ? <p>{error}</p> : null}
         <div className="LandingPage__form--submit">
